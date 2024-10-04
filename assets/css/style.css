@@ -66,17 +66,35 @@ footer{
     font-weight: bolder;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
-footer:hover{
 
-}
+
 footer img{
     height: 50px;
     display: inline;
 }
+
+#footer_left_lg{
+    display: none;
+    height: 120px;
+}
+#footer_right_lg{
+    display: none;
+    height: 120px;
+}
+
+.sociales{
+    font-size: smaller;
+    font-stretch: extra-expanded;
+}
+
+.sociales a:link, a:visited{
+    color:#F2EA79;
+}
+
 body{
     background-color: var(--fondo);
     margin: 0;
@@ -104,7 +122,7 @@ body{
     box-shadow: 5px 5px 3px var(--oscuro1),-5px -5px 3px var(--contraste);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: center;
     transition: 1s;
 }
 .gal:hover{
@@ -114,8 +132,12 @@ body{
 .gal img{
     max-width: 300px;
     transition: 1s;
-    
+    align-self: center !important;
 }
+/* .gal>*:nth-child(2)
+    {
+        align-self: center;
+    } */
 .gal img:hover{
     transition: 1s;
     transform: scale(1.5,1.5);
@@ -127,7 +149,7 @@ body{
     body{
         grid-template-areas: 
         "header catalog"
-        "footer catalog"
+        "footer footer"
         ;
         grid-template-columns: 1fr 8fr;
         grid-template-rows:auto;
@@ -137,7 +159,6 @@ body{
     .navbar{
         justify-items: start;
         align-items: start;
-
     }
     .container-fluid{
         flex-direction: column;
@@ -157,16 +178,21 @@ body{
         justify-content: center;
         grid-area: catalog;
     }
-    .gal{
-        margin: 15px;
-        box-shadow: 5px 5px 3px lightgray;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        display: show;
-    }
 
     footer{
         text-align: center;
+        align-content: space-between;
+    }
+    #footer_left_sm {
+        display: none;
+    }
+    #footer_right_sm {
+        display: none;
+    }
+    #footer_left_lg {
+        display: inline;
+    }
+    #footer_right_lg{
+        display: inline;
     }
 }
